@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html LANG="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Abigail De Leon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Weather Forecast App</h1>
+            <p class="author">Created by <strong>Abigail De Leon</strong></p>
+            <button id="infoBtn" class="btn-info">About PM Accelerator</button>
+            </h1>
+        </header>
+    
+        <!-- Search section -->
+        <section class="search-section card">
+            <h2> Search Weather</h2>
+            <div class="form-group">
+                <input
+                type="text"
+                id="locationInput"
+                placeholder="Enter city name, zip code, or coordinates (e.g., 'London' or '40.7128,-74.0060')"
+                class="input-field"
+                >
+            </div>
+
+            <div class="date-inputs">
+                <div class="form-group">
+                    <label for="startDate">Start Date (Optional)</label>
+                    <input type="date" id="startDate" class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="endDate">End Date (Optional)</label>
+                    <input type="date" id="endDate" class="input-field">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="searchBtn" class="btn btn-primary"> Search & Save to Database</button>
+                <button id="currentLocationBtn" class="btn btn-secondary"> Use My Location</button>
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Current Weather Display -->
+        <div id="weatherResult"></div>
+
+        <!-- 5 Day Forecast -->
+        <div id="forecastResult"></div>
+
+        <!-- Saved Searches (Database CRUD) -->
+        <section class="saved-searches card">
+            <h2>Saved Searches (Database CRUD Operations)</h2>
+            <p class="subtitle">All searches are stored in MongoDB with full CRUD functionality</p>
+            <button id="refreshBtn" class="btn btn-secondary" style="margin-bottom: 15px;">Refresh List</button>
+            <div id="searchesList"></div>
+        </section>
+    </div>
+
+    <!-- Info Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>About Product Manager Accelerator</h2>
+            <p>Product Manager Accelerator is a community of product leaders, designers, and innovators. We connect talented individuals with opportunities to work on cutting-edge AI and technology projects through partnerships with leading platforms.</p>
+            <p>Our mission is to help build the next generation of AI products while providing valuable experience and networking opportunities for product professionals.</p>
+            <p><strong>Learn more:</strong></p>                <p><a href="https://www.linkedin.com/school/pmaccelerator/" target="_blank" class="link">Product Manager Accelerator on LinkedIn</a></p>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-edit">&times;</span>
+            <h2> Edit Weather Search</h2>
+            <div class="form-group">
+                <label for="editLocation" class="input-field">Location</label>
+                <input type="text" id="editLocation" class="input-field">
+            </div>
+            <div class="form-group">
+                <label for="editStartDate">Start Date</label>
+                <input type="date" id="editStartDate" class="input-field">
+            </div>
+            <div class="form-group">
+                <label for="editStartDate">Start Date</label>
+                <input type="date" id="editStartDate" class="input-field">
+            </div>
+            <div class="form-group">
+                <label for="editEndDate">End Date</label>
+                <input type="date" id="editEndDate" class="input-field">
+            </div>
+            <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js.ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
